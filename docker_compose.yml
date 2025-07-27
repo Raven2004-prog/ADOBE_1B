@@ -1,0 +1,29 @@
+version: "3.8"
+
+services:
+  task1a:
+    build:
+      context: ./1A
+      dockerfile: docker/Dockerfile
+    image: task1a:latest
+    volumes:
+      - ./input/pdfs:/app/input
+      - ./1A/outputs:/app/output
+
+  task1b:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: task1b:latest
+    depends_on:
+      - task1a
+    volumes:
+      - ./input/pdfs:/app/input/pdfs
+      - ./1A/outputs:/app/1A/outputs
+      - .:/app
+    command: >
+      python -u src/main.py
+        --input       /app/input/pdfs
+        --task1a      /app/1A/outputs
+        --input-spec /app/input/challenge1b_input.json
+        --output      /app/output1b.json
