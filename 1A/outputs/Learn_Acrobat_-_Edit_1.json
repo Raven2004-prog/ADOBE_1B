@@ -1,0 +1,35 @@
+{
+  "title": "About editing text and images",
+  "outline": [
+    {
+      "level": "H1",
+      "text": "About editing text and images",
+      "page": 13
+    },
+    {
+      "level": "H1",
+      "text": "Add images in a PDF",
+      "page": 13
+    },
+    {
+      "level": "H1",
+      "text": "Modify images in a PDF",
+      "page": 14
+    },
+    {
+      "level": "H1",
+      "text": "Delete images from a PDF",
+      "page": 15
+    },
+    {
+      "level": "H1",
+      "text": "Add Objects to PDF",
+      "page": 15
+    },
+    {
+      "level": "H1",
+      "text": "Edit an image outside Acrobat",
+      "page": 16
+    }
+  ]
+}

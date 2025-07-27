@@ -1,0 +1,85 @@
+{
+  "title": "Change the color of the markup",
+  "outline": [
+    {
+      "level": "H1",
+      "text": "Highlight, strikethrough, or underline text comment",
+      "page": 7
+    },
+    {
+      "level": "H2",
+      "text": "Using Select Text Tool",
+      "page": 7
+    },
+    {
+      "level": "H2",
+      "text": "Using Markup Tool",
+      "page": 7
+    },
+    {
+      "level": "H1",
+      "text": "Change the color of the markup",
+      "page": 8
+    },
+    {
+      "level": "H1",
+      "text": "Delete The Markup",
+      "page": 8
+    },
+    {
+      "level": "H1",
+      "text": "To delete the markup, select the markup and then select delete",
+      "page": 8
+    },
+    {
+      "level": "H1",
+      "text": "Add a comment to the markup",
+      "page": 8
+    },
+    {
+      "level": "H1",
+      "text": "Replace text",
+      "page": 8
+    },
+    {
+      "level": "H1",
+      "text": "Insert text",
+      "page": 9
+    },
+    {
+      "level": "H1",
+      "text": "Export text edits",
+      "page": 10
+    },
+    {
+      "level": "H2",
+      "text": "Send an anonymous or public link in an email",
+      "page": 10
+    },
+    {
+      "level": "H1",
+      "text": "Reviewer experience",
+      "page": 11
+    },
+    {
+      "level": "H2",
+      "text": "Send personalized invitations for commenting",
+      "page": 11
+    },
+    {
+      "level": "H1",
+      "text": "Initiate a review using @mention in a PDF",
+      "page": 12
+    },
+    {
+      "level": "H1",
+      "text": "Reviewer experience",
+      "page": 12
+    },
+    {
+      "level": "H1",
+      "text": "Initiate SharePoint-based shared review using Acrobat",
+      "page": 14
+    }
+  ]
+}
