@@ -1,0 +1,137 @@
+timing:
+  hard_timeout_seconds: 10
+
+tagged:
+  min_toc_entries: 1
+
+filtering:
+  min_core_chars: 3
+  max_heading_chars: 100
+  drop_first_page_headings_from_outline: false
+
+body_profile:
+  sample_pages: 3
+  use_median_font_size: false
+
+scoring:
+  rel_font_size_threshold: 1.15
+  top_pct_threshold: 0.15
+  vertical_gap_multiplier: 1.5
+
+  rel_font_size_score: 2
+  is_bold_score: 2
+  top_pct_score: 1
+  vertical_gap_score: 1
+  short_line_score: 1
+  has_numeric_prefix_score: 2
+
+  ends_with_colon_score: 2
+  title_case_score: 1
+  uppercase_ratio_score: 1
+  ends_with_period_penalty: -1
+
+  # NEW: penalize if the line is actually smaller than the body / median size
+  rel_font_below_body_penalty: -2
+
+  heading_score_threshold: 6
+  min_rules_fired: 3
+  very_short_char_threshold: 20
+  very_short_line_score: 1
+
+levels:
+  h1:
+    rel_font_min: 1.8
+    page_top_pct_max: 0.04
+  h2:
+    rel_font_min: 1.45
+    page_top_pct_max: 0.08
+  h3:
+    rel_font_min: 1.15
+    page_top_pct_max: 1.00
+
+salience:
+  enable: true
+  font_ratio_std_epsilon: 0.15
+  q_h1: 0.85
+  q_h2: 0.50
+  weights:
+    bold: 2.0
+    center: 2.0
+    vertical_gap_z: 1.0
+    topness: 1.0
+    numeric_prefix: 1.0
+    short_line: 0.5
+    word_count_norm: -0.5
+
+keywords:
+  enabled: true
+  boost_score: 2
+  max_extra: 1
+  apply_if_score_at_least: 5
+  max_chars: 80
+  frontmatter_only: true
+  force_h1_if_early: true
+  force_h1_max_page: 5
+  list:
+    - revision history
+    - table of contents
+    - acknowledgements
+    - references
+
+page_numbering:
+  mode: index0
+  offset: 0
+
+hierarchy:
+  appendix_base_level: 2
+  appendix_children_bump: 1
+
+promotion:
+  enable: true
+  allow_h1: false      # never promote to H1 here
+  h2_q: 0.85
+
+repetition:
+  enable: true
+  min_occurrences: 3
+  max_words: 8
+  boost_score: 2
+  # NEW - per-page / per-block repetition
+  min_occurrences_block: 2
+  block_scope: "page"     # ("page" or future "h1")
+  block_bonus: 2
+
+spatial:
+  enable: true
+  use_page_stats: true
+  z_above_min: 1.2
+  z_below_min: 1.0
+  both_sides_bonus: 2
+  one_side_bonus: 1
+  first_line_on_page_ignore_above: true
+
+# NEW: context look-ahead bonuses (bullet blocks)
+context:
+  enable: true
+  k_lookahead: 5
+  min_bullets: 2
+  bullet_block_bonus: 2
+
+# NEW: recipe-style back-link detector
+recipe:
+  enable: true
+  back_look_lines: 8
+  labels: ["ingredients:", "instructions:", "method:", "directions:"]
+  promote_level: "H2"            # used later if you want to force-level; currently we just boost score
+  min_title_words: 1
+  max_title_words: 6
+
+semantic_filter:
+  enable: true
+  use_spacy: true
+  model: "en_core_web_sm"
+  max_chars: 120            # only run spaCy for reasonably short headings
+  min_alpha_ratio: 0.5      # at least 50% alphabetic chars
+  accept_all_caps_minlen: 2 # accept acronyms like "RFP", "ODL"
+  require_content_pos: true # require at least one NOUN / PROPN / VERB / ADJ
+  content_pos: ["NOUN", "PROPN", "VERB", "ADJ"]
