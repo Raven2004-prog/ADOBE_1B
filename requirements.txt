@@ -4,3 +4,4 @@ scipy>=1.7.0
 yake>=0.4.8
 torch>=1.13.1
 transformers>=4.30.0
+PyMuPDF>=1.22.0
