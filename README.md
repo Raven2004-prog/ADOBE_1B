@@ -6,7 +6,11 @@ This project processes PDF heading outputs from Task 1A and selects those releva
 **Folder Structure**
 --------------------
 
-project\_root/├── input/│   ├── pdfs/                  # Original PDF inputs│   └── challenge1b\_input.json # Persona & job-to-be-done spec│├── 1A/                        # Existing Task 1A project│   └── outputs/               # 1A output JSONs│       └── \*.json│├── models/                    # Downloaded sentence-transformers model│   └── all-MiniLM-L6-v2/│├── src/                       # Task 1B source code│   ├── main.py                # Entry point: orchestrates processing│   ├── relevance.py           # Embedding & similarity logic│   ├── utils.py               # JSON I/O helpers│   └── config.py              # Thresholds & path constants│├── requirements.txt           # Python dependencies├── Dockerfile                 # Container build instructions└── README.md                  # This document
+<img width="692" height="506" alt="image" src="https://github.com/user-attachments/assets/588f7835-82ae-4b31-b9d8-26ac27ebde0a" />
+
+<img width="571" height="97" alt="image" src="https://github.com/user-attachments/assets/e7dc4306-e658-47a5-8b8d-39f083b5e6b6" />
+
+
 
 **Prerequisites**
 -----------------
