@@ -1,5 +1,3 @@
-# src/main.py
-
 import argparse
 import json
 from datetime import datetime
@@ -66,25 +64,30 @@ def main():
     for title, heads in relevant.items():
         fname = title_to_filename.get(title, f"{title}.pdf")
         for h in heads:
+            pg = h.get("page") or h.get("page_number")
+            if pg is None:
+                continue  # skip entries without a page
             all_hits.append({
                 "document":      fname,
                 "section_title": h["text"].strip(),
-                "page_number":   h.get("page") or h.get("page_number"),
+                "page_number":   pg,  # still 1-based here
                 "score":         h["score"]
             })
     all_hits.sort(key=lambda x: x["score"], reverse=True)
 
-    # 5) build extracted_sections (only desired keys)
+    # 5) build extracted_sections (only desired keys, convert to 0-based)
     clean_sections = []
     for rank, hit in enumerate(all_hits, start=1):
+        page_n = hit["page_number"]
+        page_idx = page_n - 1 if page_n >= 1 else 0  # clamp negatives → 0-based
         clean_sections.append({
             "document":        hit["document"],
             "section_title":   hit["section_title"],
             "importance_rank": rank,
-            "page_number":     hit["page_number"]
+            "page_number":     page_idx
         })
 
-    # 6) subsection analysis
+    # 6) subsection analysis (uses page_number as 0-based index)
     section_meta = [sec.copy() for sec in clean_sections]
     subsection_analysis = extract_section_body(
         section_meta,

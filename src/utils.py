@@ -1,5 +1,3 @@
-# src/utils.py
-
 import os
 import glob
 import re
@@ -38,7 +36,7 @@ def extract_section_body(section_list, input_pdf_dir):
     then extracts only the text between them. Returns list of dicts with keys:
       - document
       - refined_text
-      - page_number
+      - page_number  (0-based)
     """
     # Build exact and normalized filename maps
     pdf_map_exact = {
@@ -60,16 +58,12 @@ def extract_section_body(section_list, input_pdf_dir):
             print(f"[DEBUG] ❌ PDF not found for section {doc_name!r}")
             continue
 
-        # Resolve page_number (try both keys)
+        # Resolve page_number
         page_n = sec.get('page_number')
         if page_n is None:
-            page_n = sec.get('page')
-        if page_n is None:
-            print(f"[DEBUG] ⚠ missing page_number for section {doc_name!r} / {sec.get('section_title')!r}; skipping")
-            continue
-
-        # Convert 1-based to 0-based index
-        page_idx = page_n - 1
+            page_n = sec.get('page', 1)
+        # Convert and clamp to 0-based index
+        page_idx = page_n - 1 if page_n >= 1 else 0
 
         # Open PDF & validate page_idx
         doc = fitz.open(pdf_path)
@@ -102,7 +96,6 @@ def extract_section_body(section_list, input_pdf_dir):
     results = []
     for sec in valid_secs:
         fname    = sec['document']
-        page_n   = sec.get('page_number') or sec.get('page')
         page_idx = sec['_page_idx']
         y0       = sec['y_start']
         pdf_path = sec['_pdf_path']
@@ -111,7 +104,7 @@ def extract_section_body(section_list, input_pdf_dir):
         idx      = group.index(sec)
         next_sec = group[idx + 1] if idx + 1 < len(group) else None
 
-        # Determine same-page clip
+        # Same-page clip
         y1 = None
         if next_sec and next_sec['_page_idx'] == page_idx:
             y1 = next_sec['y_start']
@@ -140,7 +133,7 @@ def extract_section_body(section_list, input_pdf_dir):
                         t = ' '.join(span['text'] for span in line['spans']).strip()
                         if t:
                             body_lines.append(t)
-            # Clip on next page
+            # Clip next page
             pgn = doc[next_idx]
             y_end = next_sec['y_start']
             for block in pgn.get_text('dict')['blocks']:
@@ -153,11 +146,12 @@ def extract_section_body(section_list, input_pdf_dir):
                         body_lines.append(t)
 
         doc.close()
+
         refined = ' '.join(body_lines)
         results.append({
             "document":     fname,
             "refined_text": refined,
-            "page_number":  page_n
+            "page_number":  page_idx  # 0-based
         })
 
     return results
