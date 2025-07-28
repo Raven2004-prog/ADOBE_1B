@@ -48,22 +48,17 @@
     },
     {
       "level": "H2",
-      "text": "•  Add Recipients access?",
+      "text": "•  Add Recipients",
       "page": 0
     },
     {
       "level": "H2",
-      "text": "•  Customize Your Message fields?",
+      "text": "•  Customize Your Message",
       "page": 0
     },
     {
       "level": "H2",
       "text": "•  Create and Share the Link",
-      "page": 0
-    },
-    {
-      "level": "H2",
-      "text": "•  Send the Invitation",
       "page": 0
     },
     {
@@ -144,11 +139,6 @@
     {
       "level": "H2",
       "text": "•  Send the Invitation chosen platform?",
-      "page": 2
-    },
-    {
-      "level": "H2",
-      "text": "Conclusion",
       "page": 2
     }
   ]

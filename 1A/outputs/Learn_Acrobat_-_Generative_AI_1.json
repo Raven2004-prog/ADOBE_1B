@@ -1,155 +1,150 @@
 {
-  "title": "Acrobat",
+  "title": "Prerequisites",
   "outline": [
     {
       "level": "H1",
       "text": "Attributions",
-      "page": 3
+      "page": 1
     },
     {
       "level": "H1",
       "text": "Feedback",
-      "page": 4
+      "page": 2
     },
     {
       "level": "H2",
       "text": "Will adobe ever look at your content while you’re using generative ai in acrobat and acrobat reader?",
-      "page": 4
+      "page": 2
     },
     {
       "level": "H2",
       "text": "What steps do we take to protect your content when you share it with us as part of providing feedback?",
-      "page": 5
+      "page": 3
     },
     {
       "level": "H2",
       "text": "If you flag content as being harmful, illegal, or offensive or if you contribute content as feedback, how long do we retain that content?",
-      "page": 5
+      "page": 3
     },
     {
       "level": "H2",
       "text": "Do acrobat’s generative ai features process my documents when i launch the application or open a file in the application?",
-      "page": 5
+      "page": 3
     },
     {
       "level": "H2",
       "text": "If I’m signed into my adobe account, does acrobat’s generative ai features automatically start processing my documents when I launch the application, or open a file in the application?",
-      "page": 5
+      "page": 3
     },
     {
       "level": "H2",
       "text": "What LLMS are we leveraging to power generative ai in acrobat?",
-      "page": 6
+      "page": 4
     },
     {
       "level": "H2",
       "text": "Does adobe concurrently train any large language models (“LLMS”) with your content while you're using generative ai features in acrobat?",
-      "page": 6
+      "page": 4
     },
     {
       "level": "H2",
       "text": "What is chat history?",
-      "page": 6
+      "page": 4
     },
     {
       "level": "H2",
       "text": "How can I see my chat history?",
-      "page": 6
+      "page": 4
     },
     {
       "level": "H2",
       "text": "Where is my chat history stored?",
-      "page": 7
+      "page": 5
     },
     {
       "level": "H2",
       "text": "Can I export my chat history in AI Assistant?",
-      "page": 7
+      "page": 5
     },
     {
       "level": "H2",
       "text": "How can I clear my chat history in AI Assistant?",
-      "page": 7
+      "page": 5
     },
     {
       "level": "H2",
       "text": "Can I disable chat history in AI Assistant?",
-      "page": 7
+      "page": 5
     },
     {
       "level": "H2",
       "text": "Can i share my chat history with others?",
-      "page": 7
+      "page": 5
     },
     {
       "level": "H2",
       "text": "What happens if I disconnect acrobat from other third-party cloud storage services such as google drive or OneDrive?",
-      "page": 7
+      "page": 5
     },
     {
       "level": "H1",
       "text": "Streaming summaries for long PDFs",
-      "page": 14
-    },
-    {
-      "level": "H1",
-      "text": "Acrobat",
-      "page": 15
+      "page": 12
     },
     {
       "level": "H1",
       "text": "Prerequisites",
-      "page": 15
+      "page": 13
     },
     {
       "level": "H1",
       "text": "View meeting details in Acrobat",
-      "page": 15
+      "page": 13
     },
     {
       "level": "H1",
       "text": "Access Zoom meeting transcripts in Acrobat",
-      "page": 15
+      "page": 13
     },
     {
       "level": "H1",
       "text": "Manually open meeting transcripts in Acrobat",
-      "page": 16
+      "page": 14
     },
     {
       "level": "H1",
       "text": "Use generative AI features in Acrobat Reader",
-      "page": 18
+      "page": 16
     },
     {
       "level": "H1",
       "text": "Like or dislike the response",
-      "page": 20
+      "page": 18
     },
     {
       "level": "H1",
       "text": "Report inappropriate content",
-      "page": 21
+      "page": 19
     },
     {
       "level": "H1",
       "text": "Rate your experience with the generative AI features",
-      "page": 23
+      "page": 21
     },
     {
       "level": "H1",
       "text": "Using AI Assistant in Acrobat mobile",
-      "page": 26
+      "page": 24
     },
     {
       "level": "H1",
       "text": "Provide feedback for generated answers",
-      "page": 30
+      "page": 28
     },
     {
       "level": "H1",
       "text": "Turn off AI Assistant",
-      "page": 32
+      "page": 30
     }
   ]
 }
